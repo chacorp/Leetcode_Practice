@@ -54,3 +54,28 @@ class Solution2(object):
                 nums= [n+temp for n in nums]
                 b +=1
         return a
+    
+class Solution3(object):
+    def singleNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        a = None
+        while (a == None):
+            # 같은 거 갯수 카운터
+            c=0
+            # 처음 하나 가져오기
+            t=nums[0]
+            
+            # 나머지와 비교하기
+            for n in nums:
+                if t==n:
+                    c+=1 
+            # 같은게 없으면 출력하기
+            if c == 1:
+                a=t
+            else:
+                nums.remove(t)
+                nums.remove(t)
+        return t
