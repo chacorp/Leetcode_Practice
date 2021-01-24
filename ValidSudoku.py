@@ -15,7 +15,7 @@ class Solution(object):
                     if c_l == cl:
                         temp+=1
                 if temp >= 2:
-                    return = False
+                    return False
                 #print(cl,':', temp)
             #print('---')
             
@@ -29,31 +29,37 @@ class Solution(object):
                     if cl == r_w[idx]:
                         temp +=1
                 if temp >= 2:
-                    return = False
+                    return False
                 #print(cl,':', temp)
             #print('---')
         
         sub = 0
-        # 네모 만들어서 확인하기
+        # 3x3 확인하기
         while sub < 9:
             print(sub,"-----")
             for n, cl in enumerate(board[sub]):
                 temp = 0
                 if cl==".":
                     continue
-                e=1
+                # 어느 칸에 해당하는지 확인
+                e=1 
                 if n-3 < 0:
                     e = 0
                 if n-3 >= 3:
                     e = 2
-
-                for r_w in range(0, 3):
-                    for c_l in range(0+e*3, 3+e*3):
+                d=1
+                if sub-3 < 0:
+                    d = 0
+                if sub-3 >= 3:
+                    d = 2
+                
+                for r_w in range(0+(d*3), 3+(d*3)):
+                    for c_l in range(0+(e*3), 3+(e*3)):
                         if cl == board[r_w][c_l]:
                             temp+=1
                 if temp >= 2:
                     return False
-                print(cl,':', temp)
+                #print(cl,':', temp)
             sub+=1
                     
         return a
