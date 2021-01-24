@@ -36,12 +36,12 @@ class Solution(object):
         sub = 0
         # 3x3 확인하기
         while sub < 9:
-            print(sub,"-----")
+            #print(sub,"-----")
             for n, cl in enumerate(board[sub]):
                 temp = 0
                 if cl==".":
                     continue
-                # 어느 칸에 해당하는지 확인
+                # 9개의 3x3 중에서 어느 칸에 해당하는지 확인
                 e=1 
                 if n-3 < 0:
                     e = 0
