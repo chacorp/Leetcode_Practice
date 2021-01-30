@@ -13,9 +13,9 @@ class Solution(object):
         cs = {i: s.count(i) for i in ss}
         ct = {j: t.count(j) for j in st}        
         
-        # 중복 제거한게 같으면
+        # 중복 제거한 결과가 같으면
         if ss == st:
-            # 아무거나 글자 뽑아서 갯수 비교
+            # 아무거나 글자 뽑아서 비교
             for w in ss:
                 if cs[w] != ct[w]:
                     return False
