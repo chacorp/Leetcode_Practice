@@ -32,3 +32,30 @@
 #                 else:
 #                     return rot
 #             return -1
+
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        # 첫 번째 숫자
+        rot = nums[0]
+        
+        # 맨 뒤랑 같나?
+        if target == nums[-1]:
+            return len(nums)-1
+        # 맨 앞이랑 같나?
+        if target == rot:
+            return 0
+          
+        # 뒤쪽에서부터
+        elif target < rot:
+            len_nums = len(nums)
+            for i in range(-1, -len_nums-1, -1):
+                if target == nums[i]:
+                    return len_nums+i
+            return -1
+        # 앞 쪽에서부터
+        elif target > rot:
+            len_nums = len(nums)
+            for i in range(len_nums):
+                if target == nums[i]:
+                    return i
+            return -1
