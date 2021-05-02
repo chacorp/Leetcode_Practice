@@ -1,10 +1,7 @@
 import numpy as np
 class Solution1:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
-        mat=np.array(matrix)
-        a = mat == target
-        a = np.sum(a)
-        return a
+        return np.sum(np.array(matrix) == target)
    
 
 class Solution2:
