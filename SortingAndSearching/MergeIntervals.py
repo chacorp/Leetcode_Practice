@@ -35,10 +35,8 @@ class Solution:
             
             # merge condition
             if left[1] >= right[0] and right[1]>= left[0]:     
-                if left[0] >= right[0]:
-                    left[0] = right[0]
-                if left[1] <= right[1]:
-                    left[1] = right[1]
+                left[0] = right[0] if left[0] >= right[0] else left[0]        
+                left[1] = right[1] if left[1] <= right[1] else left[1]
                     
             elif left[1] < right[0]:
                 new_intervals.append(left)
