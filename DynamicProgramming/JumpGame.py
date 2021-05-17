@@ -23,10 +23,10 @@ class Solution:
             
         
 #     def johnnajump(self, nums: List[int], idx: int, max_len: int) -> bool:
-#         if idx == max_len:
+#         if idx >= max_len:
 #             return 1
         
-#         jump = min(nums[idx] + idx, max_len)
+#         jump = nums[idx] + idx
         
 #         # 점프
 #         for next_idx in range(jump, idx, -1):
